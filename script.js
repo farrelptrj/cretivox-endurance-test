@@ -81,3 +81,54 @@ window.addEventListener(
     },1000)
 
 })
+
+/* global gsap, ScrollTrigger */
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* TEXT REVEAL */
+
+gsap.utils.toArray(".reveal").forEach((el) => {
+  gsap.fromTo(
+    el,
+    {
+      opacity: 0,
+      y: 80,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power4.out",
+
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+        toggleActions: "play none none none",
+      },
+    }
+  );
+});
+
+/* IMAGE REVEAL */
+
+gsap.utils.toArray(".image-reveal").forEach((img) => {
+  gsap.fromTo(
+    img,
+    {
+      opacity: 0,
+      scale: 1.1,
+    },
+    {
+      opacity: 1,
+      scale: 1,
+      duration: 1.5,
+      ease: "power3.out",
+
+      scrollTrigger: {
+        trigger: img,
+        start: "top 85%",
+      },
+    }
+  );
+});

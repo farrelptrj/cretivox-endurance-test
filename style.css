@@ -733,3 +733,14 @@ footer{
   color: #999;
   line-height: 1.7;
 }
+
+/* GSAP REVEAL */
+
+.reveal {
+  opacity: 0;
+}
+
+.image-reveal {
+  opacity: 0;
+  transform: scale(1.1);
+}
