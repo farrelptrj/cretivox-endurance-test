@@ -22,7 +22,7 @@ app.post("/login", (req, res) => {
 
     return res.json({
       success: true,
-      message: "Login berhasil 🔥"
+      message: "Login berhasil "
     });
 
   }
