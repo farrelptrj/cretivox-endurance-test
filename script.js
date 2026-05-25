@@ -72,6 +72,8 @@ window.addEventListener(
     const loader =
     document.querySelector(".loader")
 
+    loader.style.transition = "1s"
+
     loader.style.opacity = "0"
 
     setTimeout(()=>{
@@ -132,3 +134,111 @@ gsap.utils.toArray(".image-reveal").forEach((img) => {
     }
   );
 });
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+  anchor.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    const target = document.querySelector(
+      this.getAttribute("href")
+    );
+
+    if (target) {
+
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+
+    }
+
+  });
+
+});
+
+// ==========================
+// LOGIN MODAL
+// ==========================
+
+window.openLogin = function () {
+
+  const modal =
+    document.getElementById(
+      "loginModal"
+    );
+
+  modal.style.display = "flex";
+
+};
+
+window.closeLogin = function () {
+
+  const modal =
+    document.getElementById(
+      "loginModal"
+    );
+
+  modal.style.display = "none";
+
+};
+
+// ==========================
+// LOGIN API
+// ==========================
+
+window.login = async function () {
+
+  const username =
+    document.getElementById(
+      "username"
+    ).value;
+
+  const password =
+    document.getElementById(
+      "password"
+    ).value;
+
+  try {
+
+    const response =
+      await fetch(
+        "http://localhost:3000/login",
+        {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type":
+              "application/json"
+          },
+
+          body: JSON.stringify({
+            username,
+            password
+          })
+
+        }
+      );
+
+    const data =
+      await response.json();
+
+    alert(data.message);
+
+    if (data.success) {
+
+      closeLogin();
+
+    }
+
+  } catch (error) {
+
+    console.log(error);
+
+    alert("Server Error");
+
+  }
+
+};

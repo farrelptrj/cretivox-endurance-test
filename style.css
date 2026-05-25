@@ -744,3 +744,89 @@ footer{
   opacity: 0;
   transform: scale(1.1);
 }
+
+/* LOGIN MODAL */
+
+.login-btn{
+
+  padding:12px 24px;
+
+  border:none;
+
+  border-radius:50px;
+
+  background:linear-gradient(
+    to right,
+    #ff7ad9,
+    #7aa2ff
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+}
+
+.login-modal{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,0.7);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:999999;
+
+}
+
+.login-box{
+
+  width:350px;
+
+  background:#111827;
+
+  padding:40px;
+
+  border-radius:30px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:20px;
+
+}
+
+.login-box input{
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:15px;
+
+}
+
+.login-box button{
+
+  padding:15px;
+
+  border:none;
+
+  border-radius:15px;
+
+  background:linear-gradient(
+    to right,
+    #ff7ad9,
+    #7aa2ff
+  );
+
+  color:white;
+
+  cursor:pointer;
+
+}

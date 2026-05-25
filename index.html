@@ -64,6 +64,14 @@
 
     </ul>
 
+    <button
+  class="login-btn"
+  onclick="openLogin()">
+
+  Login
+
+</button>
+
   </nav>
 
   <!-- HERO -->
@@ -412,13 +420,43 @@
     by Farrel © 2026
 
   </footer>
+  <!-- LOGIN MODAL -->
+
+<div class="login-modal" id="loginModal">
+
+  <div class="login-box">
+
+    <h2>LOGIN</h2>
+
+    <input
+      type="text"
+      id="username"
+      placeholder="Username"
+    >
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+    >
+
+    <button onclick="login()">
+      Masuk
+    </button>
+
+    <button onclick="closeLogin()">
+      Close
+    </button>
+
+  </div>
+
+</div>
 
   <!-- GSAP -->
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
   <script src="script.js"></script>
 
 </body>
